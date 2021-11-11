@@ -10,36 +10,32 @@ class ProdutosController extends Controller
    
     public function index()
     {
-        $produtos = Produtos::all();
-        return $produtos;
+        //
     }
 
    
     public function store(Request $request)
     {
-       $produto =  Produtos::create($request->all());
-        return $produto;
+       $marca =  Produtos::create($request->all());
+        return $marca;
         
     }
 
     
-    public function show($id)
+    public function show(Produtos $produtos)
     {
-        
-        return Produtos::findOrFail($id);
+        //
     }
 
    
-    public function update(Request $request, $id)
+    public function update(Request $request, Produtos $produtos)
     {
-       $produto = Produtos::findOrFail($id);
-       $produto->update($request->all());
+        //
     }
 
     
-    public function destroy($id)
+    public function destroy(Produtos $produtos)
     {
-        $produto = Produtos::findOrFail($id);
-        $produto->delete();
+        //
     }
 }
