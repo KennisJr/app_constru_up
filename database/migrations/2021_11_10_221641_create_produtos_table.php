@@ -6,24 +6,21 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateProdutosTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+   
     public function up()
     {
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
+            $table->string('nome',30)->unique();
+            $table->string('descricao',100)->comment('Descricao do Produto');
+            $table->string('marca',30);
+            $table->integer('valor');
             $table->timestamps();
-        });
-    }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+        });
+ }
+
+   
     public function down()
     {
         Schema::dropIfExists('produtos');

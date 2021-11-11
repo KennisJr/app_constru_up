@@ -16,7 +16,9 @@ class ProdutosController extends Controller
    
     public function store(Request $request)
     {
-        //
+       $marca =  Produtos::create($request->all());
+        return $marca;
+        
     }
 
     
