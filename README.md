@@ -15,4 +15,4 @@ Observações:
  *****SOBRE API***
  a parte de CRUD está funcionando, para testar o atualizar e deletar (os que faltaram no front) basta utilizar o postmen
  no caso para atualizar utilizar o método post e a url localhost:8000/api/produtos/{id} (com os campos preenchidos)
- no cado do deletar basta utilizar o metodo delete e a url localhost:8000/api/produtos/{id}
+ no caso do deletar basta utilizar o metodo delete e a url localhost:8000/api/produtos/{id}
