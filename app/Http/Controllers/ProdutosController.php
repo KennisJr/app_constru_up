@@ -10,7 +10,8 @@ class ProdutosController extends Controller
    
     public function index()
     {
-        //
+        $produtos = Produtos::all();
+        return $produtos;
     }
 
    
@@ -22,20 +23,22 @@ class ProdutosController extends Controller
     }
 
     
-    public function show(Produtos $produtos)
+    public function show($id)
     {
-        //
+        return Produtos::findOrFail($id);
     }
 
    
-    public function update(Request $request, Produtos $produtos)
+    public function update(Request $request,$id)
     {
-        //
+        $produto = Produtos::findOrFail($id);
+       $produto->update($request->all());
     }
 
     
-    public function destroy(Produtos $produtos)
+    public function destroy($id)
     {
-        //
+        $produto = Produtos::findOrFail($id);
+        $produto->delete();
     }
 }

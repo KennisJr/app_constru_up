@@ -23,11 +23,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                   Pesquisar com id
-                                </button>
-                
-                                <button type="submit" class="btn btn-primary">
-                                   Pesquisar Todos
+                                   Pesquisar Pelo id
                                 </button>
                                 
                             </div>
@@ -40,35 +36,7 @@
                 <div class="card-header">Produtos cadastrados</div>
 
                 <div class="card-body">
-                    <table class="table table-hover">
-            <thead>
-                <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                </tr>
-                <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                </tr>
-                <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-                </tr>
-            </tbody>
-</table>
+                   <tabela-component :dados="produtos"></tabela-component>
  
                 </div>
                 <div class="card-footer">
@@ -80,15 +48,39 @@
             </div>
         </div>
     </div>
-
-                                        
-         
-    
-
              
          
 </template>
 
 <script>
+  export default {
+      data() {
+          return {
+              urlBase: 'http://localhost:8000/api/produtos',
+              nomeProduto: '',
+              descricaoProduto: '',
+              marcaProduto: '',
+              valorProduto: '',
+              produtos: []
+          };
+      },
+     
+      methods: {
+          carregarLista(){
+              axios.get(this.urlBase)
+              .then(response =>{
+                  this.produtos = response.data;
+                  console.log(produtos);
+              })
+              .catch(erros => {
+                  console.log(erros);
+              })
+          }
+      },
+      mounted() {
+          this.carregarLista();
+      }
+      
+      }
   
 </script>
