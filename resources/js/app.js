@@ -14,6 +14,7 @@ Vue.component('tabela-component', require('./components/Tabela.vue').default);
 
 
 
+
 const app = new Vue({
     el: '#app',
 });

@@ -42,9 +42,7 @@
                     <li class="nav-item">
                             <a class="nav-link" href="{{route('pesquisar')}}">Pesquisar</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Excluir</a>
-                        </li>
+                        
                     </ul>
                 </div>
             </div>

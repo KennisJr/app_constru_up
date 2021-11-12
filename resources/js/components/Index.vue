@@ -45,6 +45,8 @@
                                 <button type="button" class="btn btn-primary" @click="salvar()">
                                    Cadastrar
                                 </button>
+                                
+                                
                             </div>
                         </div>
                     </form>

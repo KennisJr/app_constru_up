@@ -2157,6 +2157,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2228,35 +2230,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2265,10 +2238,22 @@ __webpack_require__.r(__webpack_exports__);
       descricaoProduto: '',
       marcaProduto: '',
       valorProduto: '',
-      produtos: []
+      produtos: [],
+      busca: {
+        nome: ''
+      }
     };
   },
   methods: {
+    pesquisar: function pesquisar() {
+      if (this.busca[chave]) [];
+      var filtro = '';
+
+      for (var _chave in this.busca) {
+        filtro += _chave + 'like:' + this.busca[_chave];
+        console.log(filtro);
+      }
+    },
     carregarLista: function carregarLista() {
       var _this = this;
 
@@ -38273,8 +38258,6 @@ var render = function () {
   return _c("div", { attrs: { calss: "container" } }, [
     _c("div", { staticClass: "row justify-content-center" }, [
       _c("div", { staticClass: "col-md-8" }, [
-        _vm._m(0),
-        _vm._v(" "),
         _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-header" }, [
             _vm._v("Produtos cadastrados"),
@@ -38293,50 +38276,7 @@ var render = function () {
     ]),
   ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card mb-3" }, [
-      _c("div", { staticClass: "card-header" }, [_vm._v("Pesquisar")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card-body" }, [
-        _c("div", { staticClass: "form-group row" }, [
-          _c(
-            "label",
-            {
-              staticClass: "col-md-4 col-form-label text-md-right",
-              attrs: { for: "inputId" },
-            },
-            [_vm._v("Id:")]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6" }, [
-            _c("input", {
-              staticClass: "form-control",
-              attrs: { id: "inputId", type: "number", name: "name", value: "" },
-            }),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group row mb-0" }, [
-          _c("div", { staticClass: "col-md-6 offset-md-4" }, [
-            _c(
-              "button",
-              { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-              [
-                _vm._v(
-                  "\n                                  Pesquisar Pelo id\n                               "
-                ),
-              ]
-            ),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
